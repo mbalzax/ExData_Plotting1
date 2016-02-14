@@ -17,7 +17,7 @@ plot2 <-function ()
     
   ### Drawing the plot and saving it to a PNG file
   plot(data1$Time, data1$Global_active_power , type = "l" , main = "" , ylab = "Global Active Power (kilowatts)" , xlab="")
-  dev.copy(png,'plot2.png')
+  dev.copy(png,'plot2.png', width=480, height=480)
   dev.off()
   
 

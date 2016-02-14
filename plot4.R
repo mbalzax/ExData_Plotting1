@@ -18,14 +18,14 @@ plot4 <-function ()
   ### Drawing the plot and saving it to a PNG file
   
   par(mfrow=c(2,2))
-  plot(data1$Time, data1$Global_active_power , type = "l" , main = "" , ylab = "Global Active Power (kilowatts)" , xlab="")
+  plot(data1$Time, data1$Global_active_power , type = "l" , main = "" , ylab = "Global Active Power" , xlab="")
   plot(data1$Time, data1$Voltage , type = "l" , main = "" , ylab = "Voltage" , xlab="datetime")
   plot(data1$Time,  data1$Sub_metering_1  ,type = "l" , ylab = "Energy sub metering" , xlab="")
   lines(data1$Time, data1$Sub_metering_2  ,type = "l" , col="red")
   lines(data1$Time, data1$Sub_metering_3  ,type = "l" , col="blue")
-  plot(data1$Time, data1$Global_reactive_power , type = "l" , main = "" , ylab="Global_reactive_power" , xlab="datetime")
-
-  dev.copy(png,'plot4.png')
-  dev.off()
+  legend('topright', names(data1)[c(7,8,9)] , lty=1, col=c('black','red', 'blue'), bty='n', cex=.75)
+  plot(data1$Time, data1$Global_reactive_power , type = "l" , main = "" , ylab = "Global_reactive_power" , xlab="datetime")
   
+  dev.copy(png,'plot4.png', width=480, height=480)
+  dev.off()  
 }

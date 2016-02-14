@@ -19,8 +19,9 @@ plot3 <-function ()
   plot(data1$Time,  data1$Sub_metering_1  ,type = "l" , ylab = "Energy sub metering" , xlab="")
   lines(data1$Time, data1$Sub_metering_2  ,type = "l" , col="red")
   lines(data1$Time, data1$Sub_metering_3  ,type = "l" , col="blue")
+  legend('topright', names(data1)[c(7,8,9)] , lty=1, col=c('black','red', 'blue'), bty='o', cex=.75)
   
-  dev.copy(png,'plot3.png')
+  dev.copy(png,'plot3.png', width=480, height=480)
   dev.off()
 
 }
